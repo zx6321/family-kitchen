@@ -1,4 +1,4 @@
-const CORE_CACHE='family-kitchen-core-v3.7.6-all-swipes';
+const CORE_CACHE='family-kitchen-core-v3.7.7-fresh-assets';
 const IMAGE_CACHE='family-kitchen-images-v1';
 const CORE=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 
@@ -32,13 +32,14 @@ self.addEventListener('fetch',event=>{
   }
 
   if(sameOrigin){
-    event.respondWith(caches.match(request).then(cached=>cached||fetch(request).then(response=>{
+    const fresh=fetch(request).then(response=>{
       if(response.ok){
         const copy=response.clone();
         caches.open(CORE_CACHE).then(cache=>cache.put(request,copy));
       }
       return response;
-    })));
+    });
+    event.respondWith(fresh.catch(()=>caches.match(request)));
     return;
   }
 
