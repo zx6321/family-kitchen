@@ -1,4 +1,4 @@
-const CORE_CACHE='family-kitchen-core-v3.6.17';
+const CORE_CACHE='family-kitchen-core-v3.7.0-performance';
 const IMAGE_CACHE='family-kitchen-images-v1';
 const CORE=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 
