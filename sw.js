@@ -1,4 +1,4 @@
-const CORE_CACHE='family-kitchen-core-v3.9.0-home-plan-inventory';
+const CORE_CACHE='family-kitchen-core-v3.10.0-ui-performance';
 const IMAGE_CACHE='family-kitchen-images-v1';
 const CORE=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 
